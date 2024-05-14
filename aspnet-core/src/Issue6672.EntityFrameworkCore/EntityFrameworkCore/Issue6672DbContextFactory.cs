@@ -21,7 +21,7 @@ namespace Issue6672.EntityFrameworkCore
              */
             var configuration = AppConfigurations.Get(WebContentDirectoryFinder.CalculateContentRootFolder());
 
-            Issue6672DbContextConfigurer.Configure(builder, configuration.GetConnectionString(Issue6672Consts.ConnectionStringName));
+            Issue6672DbContextConfigurer.ConfigureDesignTime(builder, configuration.GetConnectionString(Issue6672Consts.ConnectionStringName));
 
             return new Issue6672DbContext(builder.Options);
         }
